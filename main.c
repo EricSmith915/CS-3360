@@ -64,6 +64,7 @@ char *end_word(char *str, char delim) {
     return NULL;
 }
 
+
 //method which will help keep track of size of strings
 int end_word_len(char *str, char delim){
     int counter = 0;
@@ -116,14 +117,16 @@ char *copy_str(char *inStr, short len, char delim) {
      tokens[3] = 0
 */
 char **tokenize(char *str, char delim) {
-    char **tokens = malloc(200);
+    int size = count_tokens(str, delim);
+
+    char **tokens = malloc(size * 8);
     char **iterate = tokens;
     int i = 0;
 
 
     int len = 0;
-    char *temp = malloc(500);
-    strncpy(temp, str, 500);
+    char *temp = malloc(size * 8);
+    strncpy(temp, str, size * 8);
 
     //counts length of original string
     while(*temp != '\0'){
