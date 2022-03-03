@@ -142,6 +142,10 @@ bool interpret(char* instr){
 		int regi_two = read_register(parsed);
 
 		int32_t read = read_address(num + regi_two, "mem.txt");
+
+		if(read == 1){
+			return false;
+		}
 		
 
 		reg[regi_one] = read;
@@ -163,7 +167,13 @@ bool interpret(char* instr){
 
 		int regi_two = read_register(parsed);
 
-		write_address(reg[regi_one], num+regi_two, "mem.txt");
+		int check = write_address(reg[regi_one], num+regi_two, "mem.txt");
+
+		if(check == -1){
+			return false;
+		}
+
+		return true;
 		
 	}
 
