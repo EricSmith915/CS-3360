@@ -32,7 +32,7 @@ int32_t read_num(char* input){
 	bool is_negative = false;
 
 	printf("%c\n", *input);
-	if(*input == "-"){
+	if(*input == '-'){
 		printf("THE STRING IS NEGATIVE\n");
 		is_negative = true;
 		input++;
@@ -146,13 +146,6 @@ bool interpret(char* instr){
 
 		reg[regi_one] = read;
 
-
-		printf("%d\n", regi_one);
-		printf("%d\n", num);
-		printf("%d\n", regi_two);
-
-
-
 	}
 
 	//Executes the store word instruction
@@ -218,9 +211,6 @@ bool interpret(char* instr){
 		return false;
 	}
 	
-	
-
-
 	return true;
 }
 
